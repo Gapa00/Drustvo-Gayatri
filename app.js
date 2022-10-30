@@ -7,7 +7,7 @@ function dissolve() {
     let scrollPosition = window.pageYOffset;
     // console.log(scrollPosition);
 
-    if (scrollPosition > 600 || (scrollPosition > 350 && screen.width < 600)) {
+    if (scrollPosition > 600 || (scrollPosition > 300 && screen.width < 600)) {
         target = document.getElementById('target');
         target.classList.add('clicked');
     }
