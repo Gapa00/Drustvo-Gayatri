@@ -163,28 +163,15 @@
 .carousel {
     justify-content: center;
     width: 40vw;
-    height:auto;
+    height: auto;
     margin: auto;
     border-radius: 20px;
-    box-shadow: 0px 50px 170px rgba(0,0,0,0.7), 0px 10px 10px rgba(0,0,0,0.2);
-}
-
-.filmcek {
-    width: 30vw;
-    height: auto;
-    margin: 8vw;
-    margin-top: 10%;
-    border-radius: 10px;
     box-shadow: 0px 50px 170px rgba(0,0,0,0.7), 0px 10px 10px rgba(0,0,0,0.2);
 }
 
 @media all and (max-device-width: 540px){
     .carousel {
         width: 90vw;
-    }
-    .filmcek {
-        width: 70vw;
-        height: auto;
     }
 }
 
