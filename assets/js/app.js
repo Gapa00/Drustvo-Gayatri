@@ -28,7 +28,7 @@ function initNav() {
 }
 
 async function loadPeople() {
-  const res = await fetch("/data/people.json", { cache: "no-store" });
+  const res = await fetch("data/people.json", { cache: "no-store" });
   return res.json();
 }
 
@@ -41,8 +41,8 @@ async function initPeoplePage() {
   const render = (items) => {
     grid.innerHTML = items.map(p => `
       <article class="person-card">
-        <a class="card-link" href="/person.html?slug=${encodeURIComponent(p.slug)}" aria-label="Open ${p.name}">
-          <img src="/assets/${p.photo}" alt="Portret: ${p.name}" loading="lazy" />
+        <a class="card-link" href="person.html?slug=${encodeURIComponent(p.slug)}" aria-label="Open ${p.name}">
+          <img src="assets/${p.photo}" alt="Portret: ${p.name}" loading="lazy" />
           <div class="card-body">
             <h3>${p.name}</h3>
             ${p.teaser ? `<p class="muted small">${p.teaser}</p>` : ""}
@@ -69,14 +69,14 @@ async function initPersonPage() {
   const p = people.find(x => x.slug === slug);
 
   if (!p) {
-    document.title = "Not found â€” DruÅ¡tvo Gayatri";
-    root.innerHTML = `<p class="muted">Oseba ni najdena. <a href="/people.html">Nazaj na Ljudje</a></p>`;
+    document.title = "Not found â€” Društvo Gayatri";
+    root.innerHTML = `<p class="muted">Oseba ni najdena. <a href="people.html">Nazaj na Ljudje</a></p>`;
     const band = document.getElementById("contact");
     if (band) band.hidden = true;
     return;
   }
 
-  document.title = `${p.name} â€” DruÅ¡tvo Gayatri`;
+  document.title = `${p.name} â€” Društvo Gayatri`;
 
   root.innerHTML = `
     <div class="person-text">
@@ -85,7 +85,7 @@ async function initPersonPage() {
       ${p.specialties?.length ? `<p><strong>Specialties:</strong> ${p.specialties.join(", ")}</p>` : ""}
     </div>
     <div class="person-photo">
-      <img src="/assets/${p.photo}" alt="Portret: ${p.name}" />
+      <img src="assets/${p.photo}" alt="Portret: ${p.name}" />
     </div>
   `;
 
@@ -102,7 +102,7 @@ async function initPersonPage() {
       <h3>${p.name}</h3>
       <p>
         ${hasPhone ? `Telefon: <a href="tel:${p.phone.replace(/\s+/g,"")}">${p.phone}</a><br>` : ""}
-        ${hasEmail ? `E-poÅ¡ta: <a href="mailto:${p.email}">${p.email}</a>` : ""}
+        ${hasEmail ? `E-pošta: <a href="mailto:${p.email}">${p.email}</a>` : ""}
       </p>
     `;
   } else {
@@ -112,7 +112,7 @@ async function initPersonPage() {
       <p>Write to the association: <a href="mailto:shantaya.rose10@gmail.com">shantaya.rose10@gmail.com</a></p>
       <p>FB group:
         <a href="https://www.facebook.com/groups/438004130708274/" target="_blank" rel="noopener noreferrer">
-          Zdravilno meditativni veÄeri, zaÄinjeni z iskrico Äarovnije.
+          Zdravilno meditativni večeri, začinjeni z iskrico čarovnije.
         </a>
       </p>
     `;
