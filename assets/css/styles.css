@@ -292,7 +292,7 @@ body:not(.home) .section:first-of-type{ padding-top: calc(var(--nav-h) + 1.2rem)
    Background pattern
    ================== */
 :root{
-  --pattern-img: url("../img/background.webp");
+  --pattern-img: url("../../assets/img/background.webp");
   --pattern-size: 480px auto;
 }
 body.patterned{
